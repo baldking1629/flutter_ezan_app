@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ezan_app/constants/my_actions_iconbutton.dart';
 
 class PrayerPage extends StatefulWidget {
-  const PrayerPage({super.key});
+  final String? sehir;
+  const PrayerPage({this.sehir, super.key});
 
   @override
   State<PrayerPage> createState() => _PrayerPageState();
@@ -16,8 +17,9 @@ class _PrayerPageState extends State<PrayerPage> {
         title: const Text('Prayer Page'),
         actions: [myIconButton(context)],
       ),
-      body: const Center(
-        child: Text('Prayer Page'),
+      body: Center(
+        child:
+            Text('${widget.sehir!} şehrindeki ezan vakitleri gösterilecektir.'),
       ),
     );
   }

@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                 dropdownValue = value!;
                 Navigator.push(context,
                     // ignore: prefer_const_constructors
-                    MaterialPageRoute(builder: (context) => PrayerPage()));
+                    MaterialPageRoute(builder: (context) => PrayerPage(sehir: value,)));
               },
               dropdownMenuEntries:
                   iller.map<DropdownMenuEntry<String>>((String value) {
