@@ -21,7 +21,10 @@ class _PrayerPageState extends State<PrayerPage> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('${widget.sehir!} şehrindeki ezan vakitleri gösterilecektir.'),
+          Text(
+            '${widget.sehir!} şehrindeki ezan vakitleri gösterilecektir.',
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+          ),
           Container(
             height: 100,
             width: double.maxFinite - 100,
