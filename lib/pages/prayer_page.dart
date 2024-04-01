@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ezan_app/constants/my_actions_iconbutton.dart';
+import 'package:flutter_ezan_app/constants/namaz_vakit_sized_box.dart';
 
 class PrayerPage extends StatefulWidget {
   final String? sehir;
@@ -17,67 +18,26 @@ class _PrayerPageState extends State<PrayerPage> {
         title: const Text('Prayer Page'),
         actions: [myIconButton(context)],
       ),
-      body: Center(
+      body: Expanded(
+        child: Center(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            '${widget.sehir!} şehrindeki ezan vakitleri gösterilecektir.',
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
-          ),
-          Container(
-            height: 100,
-            width: double.maxFinite - 100,
-            decoration: const BoxDecoration(
-              //gradient: LinearGradient(colors: [Colors.red, Colors.blue]),
-              borderRadius: BorderRadius.all(
-                Radius.circular(12),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '${widget.sehir!} şehrindeki ezan vakitleri gösterilecektir.',
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
               ),
-            ),
-            child: const Center(
-              child: Text(
-                'İmsak: 12.57',
-                style: TextStyle(fontSize: 25),
-              ),
-            ),
+              namazVakitleriSizedBox('İmsak'),
+              namazVakitleriSizedBox('Güneş'),
+              namazVakitleriSizedBox('Öğle'),
+              namazVakitleriSizedBox('İkindi'),
+              namazVakitleriSizedBox('Akşam'),
+              namazVakitleriSizedBox('Yatsı'),
+            ],
           ),
-          Container(
-            height: 100,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
-            child: const Text('Güneş'),
-          ),
-          Container(
-            height: 100,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
-            child: const Text('Öğle'),
-          ),
-          Container(
-            height: 100,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
-            child: const Text('İkindi'),
-          ),
-          Container(
-            height: 100,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
-            child: const Text('Akşam'),
-          ),
-          Container(
-            height: 100,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
-            child: const Text('Yatsı'),
-          ),
-        ],
-      )),
+        ),
+      ),
     );
   }
 }
