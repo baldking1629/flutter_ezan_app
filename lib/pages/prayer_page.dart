@@ -18,9 +18,63 @@ class _PrayerPageState extends State<PrayerPage> {
         actions: [myIconButton(context)],
       ),
       body: Center(
-        child:
-            Text('${widget.sehir!} şehrindeki ezan vakitleri gösterilecektir.'),
-      ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('${widget.sehir!} şehrindeki ezan vakitleri gösterilecektir.'),
+          Container(
+            height: 100,
+            width: double.maxFinite - 100,
+            decoration: const BoxDecoration(
+              //gradient: LinearGradient(colors: [Colors.red, Colors.blue]),
+              borderRadius: BorderRadius.all(
+                Radius.circular(12),
+              ),
+            ),
+            child: const Center(
+              child: Text(
+                'İmsak: 12.57',
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+          ),
+          Container(
+            height: 100,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
+            child: const Text('Güneş'),
+          ),
+          Container(
+            height: 100,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
+            child: const Text('Öğle'),
+          ),
+          Container(
+            height: 100,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
+            child: const Text('İkindi'),
+          ),
+          Container(
+            height: 100,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
+            child: const Text('Akşam'),
+          ),
+          Container(
+            height: 100,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [Colors.red, Colors.blue])),
+            child: const Text('Yatsı'),
+          ),
+        ],
+      )),
     );
   }
 }
